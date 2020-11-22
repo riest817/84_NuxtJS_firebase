@@ -1,12 +1,12 @@
 <template>
   <div class="container">
-    <!--{{ users[0].id }}, {{ users[0].name }}-->
-    <ul>
-      <li v-for="user in users" :key="user.id">
-      {{ user.id}}, {{ user.name }}, {{ user.company.name }}
-      </li>
-    </ul>
-    <img src="~/assets/cat.jpg">
+    <!--p>{{ $store.state.message }}</p-->
+    <p>{{ $store.state.hello.message }}</p>
+    <!--button v-on:click="$store.commit('updateMessage')">Update</button-->
+    <!--button v-on:click="$store.commit('updateMessage', 'Commit with payload')">Update</button-->
+    <!--button v-on:click="$store.dispatch('updateMessageAction', 'Commit with payload')">Dispatch</button-->
+    <!--button v-on:click="$store.dispatch('updateMessageAction', 'Dispatch with payload')">Dispatch</button-->
+    <button v-on:click="$store.dispatch('hello/updateMessageAction', 'Dispatch with payload')">Dispatch</button>
   </div>
 </template>
 
